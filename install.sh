@@ -16,7 +16,9 @@ fi
 # Ensure Python dependencies are installed
 if ! command_exists uv; then
   echo "Installing uv and syncing dependencies..."
-  pip install uv
+  
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  
   uv sync
 else
   echo "uv is already installed. Syncing dependencies..."
