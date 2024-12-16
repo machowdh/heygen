@@ -17,8 +17,9 @@ The server simulates a backend status API for video translation, which can retur
 1. Ensure `install.sh` is executable.
 2. Run using `./install.sh`
 3. Activate the virtual environment: `source .venv/bin/activate`
-4. To run the FastAPI server from root: `uvicorn app.main:app --reload`
-5. View docs at `/docs` or `/redoc`
+4. Ensure that **Redis is running**, execute `redis-server` in another shell.
+5. To run the FastAPI server from root: `uvicorn app.main:app --reload`
+6. View docs at `/docs` or `/redoc`
 
 ---
 ## Implementation
@@ -59,7 +60,10 @@ There are a few unit test for auth, rate limits, and the routes, which can be ru
 
 ### Integration Test
 
+*As always, ensure Redis is running*
+
 To see the server and client be used together, run `uv run integration_test.py` if using uv, or `python integration_test.py` from your activated virtual environment. This spins up the server in a subprocess and the client to request translation for an example video, and then tries to get the status of the video until it returns completed.
+
 
 ---
 
