@@ -1,0 +1,2 @@
+class PendingStatusException(Exception):
+    pass
