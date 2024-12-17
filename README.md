@@ -50,6 +50,8 @@ exceeded, but will still try to get the video status as soon as the rate limits 
 
 Beyond the above retry mechanisms, the client uses an in-memory set to keep track of requested video urls and their IDs, preempting a use case where the client erroneously or intentionally triggers a POST request on the same video URL. 
 
+Implemented in client/video_translator.py, the client library can be instantiated with the url of the FastAPI backend. The class has two methods for translating and retrieving the status of videos accordingly.
+
 ---
 
 ## Testing
